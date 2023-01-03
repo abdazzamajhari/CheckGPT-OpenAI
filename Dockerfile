@@ -24,7 +24,11 @@ WORKDIR /app
 # COPY requirements.txt /app/requirements.txt
 # Install dependencies
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install torch torchvision
+RUN pip install transformers
+RUN pip install googletrans==3.1.0a0
+RUN pip install ipywidgets
+RUN pip install torchmetrics
 
 # Copies everything to the working directory
 # COPY . /app
