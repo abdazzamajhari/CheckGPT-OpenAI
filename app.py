@@ -39,5 +39,5 @@ def predict():
       #  return "Hasilnya adalah "+results
     return render_template("form.html", val=translated_text, results=results)
  
-if __name__=='__main__':
-   app.run()
+if __name__ == "__main__": 
+    app.run(host="0.0.0.0", port=3000)
