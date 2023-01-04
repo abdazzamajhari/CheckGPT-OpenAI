@@ -1,18 +1,21 @@
-# FOR UBUNTU SERVER
-FROM ubuntu:20.04
-RUN DEBIAN_FRONTEND=noninteractive
+# # FOR UBUNTU SERVER
+# FROM ubuntu:20.04
+# RUN DEBIAN_FRONTEND=noninteractive
 
-# Set timezone:
-RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
+# # Set timezone:
+# RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
 
-# Install dependencies:
-RUN apt-get update && apt-get install -y tzdata
+# # Install dependencies:
+# RUN apt-get update && apt-get install -y tzdata
 
-RUN apt-get update && apt-get install -y keyboard-configuration
+# RUN apt-get update && apt-get install -y keyboard-configuration
 
-RUN apt-get update && apt-get -y install sudo
-RUN sudo apt-get install python3.10 -y
-RUN sudo apt-get install python3-pip -y
+# RUN apt-get update && apt-get -y install sudo
+# RUN sudo apt-get install python3.10 -y
+# RUN sudo apt-get install python3-pip -y
+
+# Sets the base image for subsequent instructions
+FROM python:3.10
 
 # Sets the working directory in the container  
 COPY . /app
