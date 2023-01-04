@@ -37,8 +37,8 @@ def predict():
        results = model.config.id2label[predicted_class_id]
 
       #  return "Hasilnya adalah "+results
-    return render_template("form.html", val=translated_text, results=results)
-#      return render_template("form.html", results=results)
+#     return render_template("form.html", val=translated_text, results=results)
+    return render_template("form.html", results=results)
  
 if __name__ == "__main__": 
     app.run(host="0.0.0.0", port=3000)
